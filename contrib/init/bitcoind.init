@@ -1,0 +1,67 @@
+#!/bin/bash
+#
+#  daylightd The daylight core server.
+#
+#
+# chkconfig: 345 80 20
+# description: daylightd
+# processname: daylightd
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/daylightd, see below
+if [ -f /etc/sysconfig/daylightd ]; then
+        . /etc/sysconfig/daylightd
+fi
+
+RETVAL=0
+
+prog=daylightd
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/daylightd
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/daylightd}
+
+# daylightd defaults to /usr/bin/daylightd, override with BITCOIND_BIN
+daylightd=${BITCOIND_BIN-/usr/bin/daylightd}
+
+# daylightd opts default to -disablewallet, override with BITCOIND_OPTS
+daylightd_opts=${BITCOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $daylightd $daylightd_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac

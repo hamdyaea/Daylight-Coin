@@ -1,0 +1,22 @@
+[Unit]
+Description=Daylight's distributed currency daemon
+After=network.target
+
+[Service]
+User=daylight
+Group=daylight
+
+Type=forking
+PIDFile=/var/lib/daylightd/bdaylightd.pid
+ExecStart=/usr/bin/daylightd -daemon -pid=/var/lib/daylightd/bdaylightd.pid \
+-conf=/etc/daylight/daylightdaylight.conf -datadir=/var/lib/daylightd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

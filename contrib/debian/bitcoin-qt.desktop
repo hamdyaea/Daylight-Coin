@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Daylight Gold
+Comment=Connect to the Daylight Gold P2P Network
+Comment[de]=Verbinde mit dem Daylight peer-to-peer Netzwerk
+Comment[fr]=Daylight, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=Daylight, eşten eşe kriptografik sanal para birimi
+Exec=daylight-qt %u
+Terminal=false
+Type=Application
+Icon=daylight128
+MimeType=x-scheme-handler/daylightdaylight;
+Categories=Office;Finance;

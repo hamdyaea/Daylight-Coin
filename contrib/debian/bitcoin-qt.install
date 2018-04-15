@@ -1,0 +1,6 @@
+usr/local/bin/daylight-qt usr/bin
+share/pixmaps/daylight32.xpm usr/share/pixmaps
+share/pixmaps/daylight16.xpm usr/share/pixmaps
+share/pixmaps/daylight128.png usr/share/pixmaps
+debian/daylight-qt.desktop usr/share/applications
+debian/daylight-qt.protocol usr/share/kde4/services/
