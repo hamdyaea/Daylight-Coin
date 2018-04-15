@@ -17,9 +17,9 @@ DaylightUnits::DaylightUnits(QObject *parent):
 QList<DaylightUnits::Unit> DaylightUnits::availableUnits()
 {
     QList<DaylightUnits::Unit> unitlist;
-    unitlist.append(BTG);
-    unitlist.append(mBTG);
-    unitlist.append(uBTG);
+    unitlist.append(DLT);
+    unitlist.append(mDLT);
+    unitlist.append(uDLT);
     return unitlist;
 }
 
@@ -27,9 +27,9 @@ bool DaylightUnits::valid(int unit)
 {
     switch(unit)
     {
-    case BTG:
-    case mBTG:
-    case uBTG:
+    case DLT:
+    case mDLT:
+    case uDLT:
         return true;
     default:
         return false;
@@ -40,9 +40,9 @@ QString DaylightUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTG: return QString("BTG");
-    case mBTG: return QString("mBTG");
-    case uBTG: return QString::fromUtf8("μBTG");
+    case DLT: return QString("DLT");
+    case mDLT: return QString("mDLT");
+    case uDLT: return QString::fromUtf8("μDLT");
     default: return QString("???");
     }
 }
@@ -51,9 +51,9 @@ QString DaylightUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTG: return QString("Daylights");
-    case mBTG: return QString("Milli-Daylights (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTG: return QString("Micro-Daylights (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case DLT: return QString("Daylights");
+    case mDLT: return QString("Milli-Daylights (1 / 1" THIN_SP_UTF8 "000)");
+    case uDLT: return QString("Micro-Daylights (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -62,9 +62,9 @@ qint64 DaylightUnits::factor(int unit)
 {
     switch(unit)
     {
-    case BTG:  return 100000000;
-    case mBTG: return 100000;
-    case uBTG: return 100;
+    case DLT:  return 100000000;
+    case mDLT: return 100000;
+    case uDLT: return 100;
     default:   return 100000000;
     }
 }
@@ -73,9 +73,9 @@ int DaylightUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case BTG: return 8;
-    case mBTG: return 5;
-    case uBTG: return 2;
+    case DLT: return 8;
+    case mDLT: return 5;
+    case uDLT: return 2;
     default: return 0;
     }
 }

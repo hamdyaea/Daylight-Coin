@@ -12,5 +12,5 @@ Daylight Gold preserves and implements Daylight features such as SegWit. Signifi
 - Replay protection (SIGHASH_FORK_ID)
 - Unique wallet addresses (prefixes of G and A)
 
-Although BTG was bootstrapped on 12 Nov to create an entirely new network, it contains the entire Daylight blockchain until block 491406. As a result, Daylight Gold became a full fork with all Daylight transaction history since 2009. Any Daylight wallet address which held Daylight in DLT block 491406 before the fork held an equal number of Daylight Gold in BTG block 491407 after the fork.
+Although DLT was bootstrapped on 12 Nov to create an entirely new network, it contains the entire Daylight blockchain until block 491406. As a result, Daylight Gold became a full fork with all Daylight transaction history since 2009. Any Daylight wallet address which held Daylight in DLT block 491406 before the fork held an equal number of Daylight Gold in DLT block 491407 after the fork.
 

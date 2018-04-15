@@ -186,7 +186,7 @@ bool parseDaylightURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!DaylightUnits::parse(DaylightUnits::BTG, i->second, &rv.amount))
+                if(!DaylightUnits::parse(DaylightUnits::DLT, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -225,7 +225,7 @@ QString formatDaylightURI(const SendCoinsRecipient &info)
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(DaylightUnits::format(DaylightUnits::BTG, info.amount, false, DaylightUnits::separatorNever));
+        ret += QString("?amount=%1").arg(DaylightUnits::format(DaylightUnits::DLT, info.amount, false, DaylightUnits::separatorNever));
         paramCount++;
     }
 

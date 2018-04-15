@@ -8,7 +8,7 @@ from test_framework.test_framework import DaylightTestFramework
 from test_framework.util import *
 
 
-class BTGForkTest(DaylightTestFramework):
+class DLTForkTest(DaylightTestFramework):
 
     def __init__(self):
         super().__init__()
@@ -32,4 +32,4 @@ class BTGForkTest(DaylightTestFramework):
 
 
 if __name__ == '__main__':
-    BTGForkTest().main()
+    DLTForkTest().main()

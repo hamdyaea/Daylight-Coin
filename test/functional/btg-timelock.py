@@ -24,7 +24,7 @@ def sig(x):
         return 0
 
 
-class BTGTimeLockTest(DaylightTestFramework):
+class DLTTimeLockTest(DaylightTestFramework):
 
     def __init__(self):
         super().__init__()
@@ -121,4 +121,4 @@ class BTGTimeLockTest(DaylightTestFramework):
 
 
 if __name__ == '__main__':
-    BTGTimeLockTest().main()
+    DLTTimeLockTest().main()

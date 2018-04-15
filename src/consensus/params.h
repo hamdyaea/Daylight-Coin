@@ -47,14 +47,14 @@ struct Params {
     /** Block height at which BIP66 becomes active */
     int BIP66Height;
     /** Block height at which Daylight GPU hard fork becomes active */
-    int BTGHeight;
+    int DLTHeight;
     /** Block height at which Zawy's LWMA difficulty algorithm becomes active */
-    int BTGZawyLWMAHeight;
+    int DLTZawyLWMAHeight;
     /** Limit BITCOIN_MAX_FUTURE_BLOCK_TIME **/
-    int64_t BTGMaxFutureBlockTime;
+    int64_t DLTMaxFutureBlockTime;
     /** Premining blocks for Daylight GPU hard fork **/
-    int BTGPremineWindow;
-    bool BTGPremineEnforceWhitelist;
+    int DLTPremineWindow;
+    bool DLTPremineEnforceWhitelist;
     /**
      * Minimum blocks including miner confirmation of the total of 2016 blocks in a retargeting period,
      * (nPowTargetTimespan / nPowTargetSpacing) which is also used for BIP9 deployments.

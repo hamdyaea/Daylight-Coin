@@ -58,9 +58,9 @@ public:
      */
     enum Unit
     {
-        BTG,
-        mBTG,
-        uBTG
+        DLT,
+        mDLT,
+        uDLT
     };
 
     enum SeparatorStyle

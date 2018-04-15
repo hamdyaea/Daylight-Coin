@@ -22,22 +22,22 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 {
     assert(pindexLast != nullptr);
     int nHeight = pindexLast->nHeight + 1;
-    bool postfork = nHeight >= params.BTGHeight;
+    bool postfork = nHeight >= params.DLTHeight;
 
     if (postfork == false) {
         // Original Bitcion PoW.
         return DaylightGetNextWorkRequired(pindexLast, pblock, params);
     }
-    else if (nHeight < params.BTGHeight + params.BTGPremineWindow) {
+    else if (nHeight < params.DLTHeight + params.DLTPremineWindow) {
         // PoW limit for premine period.
         unsigned int nProofOfWorkLimit = UintToArith256(params.PowLimit(true)).GetCompact();
         return nProofOfWorkLimit;
     }
-    else if (nHeight < params.BTGHeight + params.BTGPremineWindow + params.nDigishieldAveragingWindow) {
+    else if (nHeight < params.DLTHeight + params.DLTPremineWindow + params.nDigishieldAveragingWindow) {
         // Pow limit start for warm-up period.
         return UintToArith256(params.powLimitStart).GetCompact();
     }
-    else if (nHeight < params.BTGZawyLWMAHeight) {
+    else if (nHeight < params.DLTZawyLWMAHeight) {
         // Regular Digishield v3.
         return DigishieldGetNextWorkRequired(pindexLast, pblock, params);
     } else {
